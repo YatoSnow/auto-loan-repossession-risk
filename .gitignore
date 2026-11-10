@@ -1,0 +1,29 @@
+# generated data and models (rebuild with the CLI)
+data/raw/
+data/processed/
+data/small/
+models/
+*.parquet
+*.joblib
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+
+# editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# secrets
+.env
+.streamlit/secrets.toml

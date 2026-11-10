@@ -1,0 +1,673 @@
+{
+  "transition_matrix": {
+    "current": {
+      "current": 0.93658,
+      "dpd_1_29": 0.05211,
+      "dpd_30_59": 0.0,
+      "dpd_60_89": 0.0,
+      "dpd_90_plus": 0.0,
+      "paid_off": 0.01131,
+      "repossessed": 0.0,
+      "charged_off": 0.0
+    },
+    "dpd_1_29": {
+      "current": 0.32958,
+      "dpd_1_29": 0.45362,
+      "dpd_30_59": 0.21417,
+      "dpd_60_89": 0.0,
+      "dpd_90_plus": 0.0,
+      "paid_off": 0.00263,
+      "repossessed": 0.0,
+      "charged_off": 0.0
+    },
+    "dpd_30_59": {
+      "current": 0.16781,
+      "dpd_1_29": 0.11875,
+      "dpd_30_59": 0.43952,
+      "dpd_60_89": 0.26616,
+      "dpd_90_plus": 0.0,
+      "paid_off": 0.00212,
+      "repossessed": 0.00565,
+      "charged_off": 0.0
+    },
+    "dpd_60_89": {
+      "current": 0.13068,
+      "dpd_1_29": 0.01869,
+      "dpd_30_59": 0.0868,
+      "dpd_60_89": 0.40154,
+      "dpd_90_plus": 0.33232,
+      "paid_off": 0.00235,
+      "repossessed": 0.02762,
+      "charged_off": 0.0
+    },
+    "dpd_90_plus": {
+      "current": 0.06232,
+      "dpd_1_29": 0.0012,
+      "dpd_30_59": 0.0,
+      "dpd_60_89": 0.03077,
+      "dpd_90_plus": 0.68395,
+      "paid_off": 0.00127,
+      "repossessed": 0.15194,
+      "charged_off": 0.06854
+    },
+    "paid_off": {
+      "current": 0.0,
+      "dpd_1_29": 0.0,
+      "dpd_30_59": 0.0,
+      "dpd_60_89": 0.0,
+      "dpd_90_plus": 0.0,
+      "paid_off": 1.0,
+      "repossessed": 0.0,
+      "charged_off": 0.0
+    },
+    "repossessed": {
+      "current": 0.0,
+      "dpd_1_29": 0.0,
+      "dpd_30_59": 0.0,
+      "dpd_60_89": 0.0,
+      "dpd_90_plus": 0.0,
+      "paid_off": 0.0,
+      "repossessed": 1.0,
+      "charged_off": 0.0
+    },
+    "charged_off": {
+      "current": 0.0,
+      "dpd_1_29": 0.0,
+      "dpd_30_59": 0.0,
+      "dpd_60_89": 0.0,
+      "dpd_90_plus": 0.0,
+      "paid_off": 0.0,
+      "repossessed": 0.0,
+      "charged_off": 1.0
+    }
+  },
+  "n_transitions": 915951,
+  "projection": {
+    "snapshot": "2023-06-30",
+    "months": 12,
+    "open_loans_at_snapshot": 19893,
+    "comparison": {
+      "Current": {
+        "actual": 0.66747,
+        "markov_all_history": 0.72383,
+        "markov_last_12_months": 0.71131
+      },
+      "1-29 DPD": {
+        "actual": 0.0753,
+        "markov_all_history": 0.07734,
+        "markov_last_12_months": 0.0755
+      },
+      "30-59 DPD": {
+        "actual": 0.02996,
+        "markov_all_history": 0.03204,
+        "markov_last_12_months": 0.03151
+      },
+      "60-89 DPD": {
+        "actual": 0.01463,
+        "markov_all_history": 0.0153,
+        "markov_last_12_months": 0.01488
+      },
+      "90+ DPD": {
+        "actual": 0.01568,
+        "markov_all_history": 0.0165,
+        "markov_last_12_months": 0.0149
+      },
+      "Paid off": {
+        "actual": 0.13909,
+        "markov_all_history": 0.08746,
+        "markov_last_12_months": 0.10646
+      },
+      "Repossessed": {
+        "actual": 0.04318,
+        "markov_all_history": 0.03452,
+        "markov_last_12_months": 0.03397
+      },
+      "Charged off": {
+        "actual": 0.01468,
+        "markov_all_history": 0.01302,
+        "markov_last_12_months": 0.01147
+      }
+    }
+  },
+  "markov_checks": {
+    "time_homogeneity": {
+      "current": {
+        "chi2": 735.5842856216346,
+        "dof": 6,
+        "p_value": 1.2660137044024857e-155,
+        "n": 774024,
+        "cramers_v": 0.021798369506057395,
+        "probs_by_period": {
+          "after_2020": {
+            "current": 0.9409,
+            "dpd_1_29": 0.0501,
+            "paid_off": 0.009
+          },
+          "before_pause": {
+            "current": 0.936,
+            "dpd_1_29": 0.0587,
+            "paid_off": 0.0053
+          },
+          "recent": {
+            "current": 0.933,
+            "dpd_1_29": 0.0527,
+            "paid_off": 0.0143
+          },
+          "servicing_pause": {
+            "current": 0.9346,
+            "dpd_1_29": 0.0594,
+            "paid_off": 0.0061
+          }
+        }
+      },
+      "dpd_1_29": {
+        "chi2": 228.6599119335515,
+        "dof": 9,
+        "p_value": 3.1508539021511913e-44,
+        "n": 81283,
+        "cramers_v": 0.030622068699349705,
+        "probs_by_period": {
+          "after_2020": {
+            "current": 0.3352,
+            "dpd_1_29": 0.46,
+            "dpd_30_59": 0.2043,
+            "paid_off": 0.0005
+          },
+          "before_pause": {
+            "current": 0.3441,
+            "dpd_1_29": 0.4216,
+            "dpd_30_59": 0.2343,
+            "paid_off": 0.0
+          },
+          "recent": {
+            "current": 0.3271,
+            "dpd_1_29": 0.4498,
+            "dpd_30_59": 0.2184,
+            "paid_off": 0.0048
+          },
+          "servicing_pause": {
+            "current": 0.2775,
+            "dpd_1_29": 0.4802,
+            "dpd_30_59": 0.2423,
+            "paid_off": 0.0
+          }
+        }
+      },
+      "dpd_30_59": {
+        "chi2": 93.4237931655604,
+        "dof": 15,
+        "p_value": 2.2690795432229352e-13,
+        "n": 32060,
+        "cramers_v": 0.03116638002013676,
+        "probs_by_period": {
+          "after_2020": {
+            "current": 0.1706,
+            "dpd_1_29": 0.1213,
+            "dpd_30_59": 0.4452,
+            "dpd_60_89": 0.2573,
+            "paid_off": 0.0004,
+            "repossessed": 0.0052
+          },
+          "before_pause": {
+            "current": 0.1548,
+            "dpd_1_29": 0.1093,
+            "dpd_30_59": 0.4074,
+            "dpd_60_89": 0.3184,
+            "paid_off": 0.0,
+            "repossessed": 0.0101
+          },
+          "recent": {
+            "current": 0.1685,
+            "dpd_1_29": 0.1188,
+            "dpd_30_59": 0.4379,
+            "dpd_60_89": 0.2654,
+            "paid_off": 0.0037,
+            "repossessed": 0.0057
+          },
+          "servicing_pause": {
+            "current": 0.1394,
+            "dpd_1_29": 0.0993,
+            "dpd_30_59": 0.4393,
+            "dpd_60_89": 0.319,
+            "paid_off": 0.0,
+            "repossessed": 0.003
+          }
+        }
+      },
+      "dpd_60_89": {
+        "chi2": 54.304923814584264,
+        "dof": 18,
+        "p_value": 1.644780960408546e-05,
+        "n": 14447,
+        "cramers_v": 0.03539730032727748,
+        "probs_by_period": {
+          "after_2020": {
+            "current": 0.1304,
+            "dpd_1_29": 0.0192,
+            "dpd_30_59": 0.0904,
+            "dpd_60_89": 0.4022,
+            "dpd_90_plus": 0.3327,
+            "paid_off": 0.0002,
+            "repossessed": 0.0249
+          },
+          "before_pause": {
+            "current": 0.1423,
+            "dpd_1_29": 0.0225,
+            "dpd_30_59": 0.103,
+            "dpd_60_89": 0.3315,
+            "dpd_90_plus": 0.3764,
+            "paid_off": 0.0,
+            "repossessed": 0.0243
+          },
+          "recent": {
+            "current": 0.1303,
+            "dpd_1_29": 0.0179,
+            "dpd_30_59": 0.0838,
+            "dpd_60_89": 0.4042,
+            "dpd_90_plus": 0.3287,
+            "paid_off": 0.0041,
+            "repossessed": 0.031
+          },
+          "servicing_pause": {
+            "current": 0.1278,
+            "dpd_1_29": 0.022,
+            "dpd_30_59": 0.0771,
+            "dpd_60_89": 0.4295,
+            "dpd_90_plus": 0.3392,
+            "paid_off": 0.0,
+            "repossessed": 0.0044
+          }
+        }
+      },
+      "dpd_90_plus": {
+        "chi2": 89.08450354441752,
+        "dof": 18,
+        "p_value": 2.1073721015678498e-11,
+        "n": 14137,
+        "cramers_v": 0.04583126301606185,
+        "probs_by_period": {
+          "after_2020": {
+            "current": 0.065,
+            "dpd_1_29": 0.0015,
+            "dpd_60_89": 0.0331,
+            "dpd_90_plus": 0.681,
+            "paid_off": 0.0002,
+            "repossessed": 0.1502,
+            "charged_off": 0.0691
+          },
+          "before_pause": {
+            "current": 0.0639,
+            "dpd_1_29": 0.0068,
+            "dpd_60_89": 0.0274,
+            "dpd_90_plus": 0.7146,
+            "paid_off": 0.0,
+            "repossessed": 0.1416,
+            "charged_off": 0.0457
+          },
+          "recent": {
+            "current": 0.0607,
+            "dpd_1_29": 0.0008,
+            "dpd_60_89": 0.0297,
+            "dpd_90_plus": 0.6789,
+            "paid_off": 0.0021,
+            "repossessed": 0.1598,
+            "charged_off": 0.0679
+          },
+          "servicing_pause": {
+            "current": 0.0567,
+            "dpd_1_29": 0.0,
+            "dpd_60_89": 0.0232,
+            "dpd_90_plus": 0.7938,
+            "paid_off": 0.0,
+            "repossessed": 0.0258,
+            "charged_off": 0.1005
+          }
+        }
+      }
+    },
+    "memory": {
+      "dpd_1_29": {
+        "chi2": 339.45395398785763,
+        "dof": 6,
+        "p_value": 2.832041846620228e-70,
+        "n": 79722,
+        "cramers_v": 0.046140930168528785,
+        "improve_rate_by_history": {
+          "came back from worse": 0.354,
+          "rolled in from better": 0.3423,
+          "stayed": 0.3114
+        },
+        "roll_forward_rate_by_history": {
+          "came back from worse": 0.1774,
+          "rolled in from better": 0.2309,
+          "stayed": 0.1996
+        }
+      },
+      "dpd_30_59": {
+        "chi2": 674.0639468552879,
+        "dof": 10,
+        "p_value": 2.3148160830926066e-138,
+        "n": 32060,
+        "cramers_v": 0.10253066936562356,
+        "improve_rate_by_history": {
+          "came back from worse": 0.3423,
+          "rolled in from better": 0.2654,
+          "stayed": 0.3079
+        },
+        "roll_forward_rate_by_history": {
+          "came back from worse": 0.1455,
+          "rolled in from better": 0.3104,
+          "stayed": 0.222
+        }
+      },
+      "dpd_60_89": {
+        "chi2": 863.7990624745572,
+        "dof": 12,
+        "p_value": 3.397773776358724e-177,
+        "n": 14447,
+        "cramers_v": 0.17290300050430876,
+        "improve_rate_by_history": {
+          "came back from worse": 0.2844,
+          "rolled in from better": 0.2043,
+          "stayed": 0.2799
+        },
+        "roll_forward_rate_by_history": {
+          "came back from worse": 0.1562,
+          "rolled in from better": 0.3978,
+          "stayed": 0.2484
+        }
+      }
+    }
+  },
+  "episodes": {
+    "count": 17408,
+    "censored": 1348,
+    "km_median_months": {
+      "30-59": 1.0,
+      "60-89": 4.0,
+      "90+": 6.0,
+      "all": 3.0
+    },
+    "end_types": {
+      "cured": 0.7033,
+      "repossessed": 0.1567,
+      "censored": 0.0774,
+      "charged_off": 0.0557,
+      "paid_off": 0.0069
+    }
+  },
+  "cohorts": [
+    {
+      "cohort": "2019-H1",
+      "loans": 2734,
+      "observed_through_mob": 60,
+      "repo_by_mob_12": 0.02304,
+      "repo_by_mob_24": 0.05377,
+      "repo_by_mob_36": 0.07974,
+      "ever_60dpd_by_mob_12": 0.10278
+    },
+    {
+      "cohort": "2019-H2",
+      "loans": 2738,
+      "observed_through_mob": 60,
+      "repo_by_mob_12": 0.01607,
+      "repo_by_mob_24": 0.05515,
+      "repo_by_mob_36": 0.08035,
+      "ever_60dpd_by_mob_12": 0.10957
+    },
+    {
+      "cohort": "2020-H1",
+      "loans": 2946,
+      "observed_through_mob": 54,
+      "repo_by_mob_12": 0.02851,
+      "repo_by_mob_24": 0.06212,
+      "repo_by_mob_36": 0.08282,
+      "ever_60dpd_by_mob_12": 0.10455
+    },
+    {
+      "cohort": "2020-H2",
+      "loans": 2787,
+      "observed_through_mob": 48,
+      "repo_by_mob_12": 0.02189,
+      "repo_by_mob_24": 0.0531,
+      "repo_by_mob_36": 0.07966,
+      "ever_60dpd_by_mob_12": 0.08432
+    },
+    {
+      "cohort": "2021-H1",
+      "loans": 2996,
+      "observed_through_mob": 42,
+      "repo_by_mob_12": 0.01702,
+      "repo_by_mob_24": 0.04239,
+      "repo_by_mob_36": 0.07577,
+      "ever_60dpd_by_mob_12": 0.08778
+    },
+    {
+      "cohort": "2021-H2",
+      "loans": 2954,
+      "observed_through_mob": 36,
+      "repo_by_mob_12": 0.01794,
+      "repo_by_mob_24": 0.05112,
+      "repo_by_mob_36": 0.09309,
+      "ever_60dpd_by_mob_12": 0.08294
+    },
+    {
+      "cohort": "2022-H1",
+      "loans": 3197,
+      "observed_through_mob": 30,
+      "repo_by_mob_12": 0.02064,
+      "repo_by_mob_24": 0.06475,
+      "repo_by_mob_36": NaN,
+      "ever_60dpd_by_mob_12": 0.09728
+    },
+    {
+      "cohort": "2022-H2",
+      "loans": 3115,
+      "observed_through_mob": 24,
+      "repo_by_mob_12": 0.0183,
+      "repo_by_mob_24": 0.06645,
+      "repo_by_mob_36": NaN,
+      "ever_60dpd_by_mob_12": 0.09117
+    },
+    {
+      "cohort": "2023-H1",
+      "loans": 3393,
+      "observed_through_mob": 18,
+      "repo_by_mob_12": 0.02299,
+      "repo_by_mob_24": NaN,
+      "repo_by_mob_36": NaN,
+      "ever_60dpd_by_mob_12": 0.09785
+    },
+    {
+      "cohort": "2023-H2",
+      "loans": 3140,
+      "observed_through_mob": 12,
+      "repo_by_mob_12": 0.02102,
+      "repo_by_mob_24": NaN,
+      "repo_by_mob_36": NaN,
+      "ever_60dpd_by_mob_12": 0.09395
+    }
+  ],
+  "cure_by_worst_bucket": [
+    {
+      "worst_bucket": "30-59",
+      "episodes": 8588,
+      "charged_off": 0.0,
+      "cured": 0.979,
+      "paid_off": 0.0073,
+      "repossessed": 0.0136,
+      "median_months": 1.0
+    },
+    {
+      "worst_bucket": "60-89",
+      "episodes": 3152,
+      "charged_off": 0.0,
+      "cured": 0.8721,
+      "paid_off": 0.0117,
+      "repossessed": 0.1161,
+      "median_months": 4.0
+    },
+    {
+      "worst_bucket": "90+",
+      "episodes": 4320,
+      "charged_off": 0.2243,
+      "cured": 0.2514,
+      "paid_off": 0.0046,
+      "repossessed": 0.5197,
+      "median_months": 6.0
+    }
+  ],
+  "forward_3m": [
+    {
+      "from": "dpd_1_29",
+      "accounts": 78020,
+      "1-29 DPD": 0.2031,
+      "charged off": 0.0,
+      "current": 0.5408,
+      "paid off": 0.0144,
+      "repossessed": 0.0022,
+      "still 30+ DPD": 0.2395
+    },
+    {
+      "from": "dpd_30_59",
+      "accounts": 30656,
+      "1-29 DPD": 0.1259,
+      "charged off": 0.0,
+      "current": 0.399,
+      "paid off": 0.0115,
+      "repossessed": 0.0197,
+      "still 30+ DPD": 0.4439
+    },
+    {
+      "from": "dpd_60_89",
+      "accounts": 13735,
+      "1-29 DPD": 0.0515,
+      "charged off": 0.0,
+      "current": 0.3005,
+      "paid off": 0.0116,
+      "repossessed": 0.1292,
+      "still 30+ DPD": 0.5072
+    },
+    {
+      "from": "dpd_90_plus",
+      "accounts": 13444,
+      "1-29 DPD": 0.0146,
+      "charged off": 0.2104,
+      "current": 0.1214,
+      "paid off": 0.0044,
+      "repossessed": 0.3977,
+      "still 30+ DPD": 0.2515
+    }
+  ],
+  "time_to_repossession": [
+    {
+      "servicing_group": "A",
+      "loans_reaching_60dpd": 3731,
+      "share_repossessed": 0.391,
+      "share_charged_off": 0.1136,
+      "median_months_60dpd_to_repo": 4.0
+    },
+    {
+      "servicing_group": "B",
+      "loans_reaching_60dpd": 2246,
+      "share_repossessed": 0.3451,
+      "share_charged_off": 0.1358,
+      "median_months_60dpd_to_repo": 4.0
+    },
+    {
+      "servicing_group": "C",
+      "loans_reaching_60dpd": 1439,
+      "share_repossessed": 0.2696,
+      "share_charged_off": 0.1668,
+      "median_months_60dpd_to_repo": 5.0
+    }
+  ],
+  "roll_rates": [
+    {
+      "state": "current",
+      "cure_to_current": NaN,
+      "improve": 0.0,
+      "stay": 0.93658,
+      "roll_forward": 0.05211,
+      "paid_off": 0.01131,
+      "repossessed": 0.0,
+      "charged_off": 0.0
+    },
+    {
+      "state": "dpd_1_29",
+      "cure_to_current": 0.32958,
+      "improve": 0.32958,
+      "stay": 0.45362,
+      "roll_forward": 0.21417,
+      "paid_off": 0.00263,
+      "repossessed": 0.0,
+      "charged_off": 0.0
+    },
+    {
+      "state": "dpd_30_59",
+      "cure_to_current": 0.16781,
+      "improve": 0.28656,
+      "stay": 0.43952,
+      "roll_forward": 0.26616,
+      "paid_off": 0.00212,
+      "repossessed": 0.00565,
+      "charged_off": 0.0
+    },
+    {
+      "state": "dpd_60_89",
+      "cure_to_current": 0.13068,
+      "improve": 0.23617,
+      "stay": 0.40154,
+      "roll_forward": 0.33232,
+      "paid_off": 0.00235,
+      "repossessed": 0.02762,
+      "charged_off": 0.0
+    },
+    {
+      "state": "dpd_90_plus",
+      "cure_to_current": 0.06232,
+      "improve": 0.09429,
+      "stay": 0.68395,
+      "roll_forward": 0.0,
+      "paid_off": 0.00127,
+      "repossessed": 0.15194,
+      "charged_off": 0.06854
+    }
+  ],
+  "absorption": [
+    {
+      "index": "current",
+      "paid_off": 0.67927,
+      "repossessed": 0.23557,
+      "charged_off": 0.08515
+    },
+    {
+      "index": "dpd_1_29",
+      "paid_off": 0.60963,
+      "repossessed": 0.28673,
+      "charged_off": 0.10364
+    },
+    {
+      "index": "dpd_30_59",
+      "paid_off": 0.49766,
+      "repossessed": 0.36897,
+      "charged_off": 0.13337
+    },
+    {
+      "index": "dpd_60_89",
+      "paid_off": 0.33975,
+      "repossessed": 0.47933,
+      "charged_off": 0.18093
+    },
+    {
+      "index": "dpd_90_plus",
+      "paid_off": 0.17336,
+      "repossessed": 0.57496,
+      "charged_off": 0.25167
+    }
+  ],
+  "repo_intensity": {
+    "during_pause": 0.03435543988175567,
+    "outside_pause": 0.09192423214569291
+  }
+}

@@ -1,0 +1,41 @@
+# Small configuration for a quick smoke run. Metrics from this run are noisy and are not the ones in the README.
+
+simulation:
+  n_loans: 3000
+  seed: 42
+
+paths:
+  raw: data/small/raw
+  processed: data/small/processed
+  models: data/small/models
+  reports: data/small/reports
+  figures: data/small/figures
+
+model:
+  horizon_months: 12       # "repossessed within 12 months of the landmark"
+  sample_every: 3          # keep each loan every 3rd month as a landmark
+  seed: 0
+  logit_C: 1.0
+  n_iter:
+    xgb_hazard: 1
+    xgb_direct: 2
+
+split:
+  train_end: "2022-12"       # nothing after this month is used for fitting
+  test_start: "2023-01"      # test landmarks: every 12-month window ends by the data cutoff
+  test_end: "2023-12"
+  holdout_loan_pct: 15       # loans never used for fitting (early stopping and "unseen loan" results)
+
+evaluation:
+  horizons: [3, 6, 12]
+  censored_horizon: 9        # horizon for the check on the most recent, partly censored landmarks
+  n_boot: 30
+
+analytics:
+  projection_snapshot: "2023-06"
+  projection_months: 12
+  periods:                   # used to test whether transition probabilities are stable over time
+    before_pause: ["2019-02", "2020-03"]
+    servicing_pause: ["2020-04", "2020-07"]
+    after_2020: ["2020-08", "2022-12"]
+    recent: ["2023-01", "2024-12"]
