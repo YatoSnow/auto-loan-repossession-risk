@@ -175,7 +175,7 @@ Full reports: [`reports/portfolio_report.md`](reports/portfolio_report.md) and
 
 ### Markov projection against what happened
 
-I took the 20,162 loans open at the end of June 2023, estimated the matrix from earlier months only,
+I took the 19,893 loans open at the end of June 2023, estimated the matrix from earlier months only,
 and projected 12 months ahead.
 
 | After 12 months | Actual | Markov | Error |
