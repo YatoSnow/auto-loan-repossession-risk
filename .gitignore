@@ -27,3 +27,21 @@ Thumbs.db
 # secrets
 .env
 .streamlit/secrets.toml
+
+# private data and credentials
+data/private/
+data/proprietary/
+private/
+proprietary/
+.env.*
+!.env.example
+!.env.sample
+credentials.json
+secrets.json
+*.pem
+*.key
+*.p12
+*.pfx
+.mypy_cache/
+.coverage
+htmlcov/

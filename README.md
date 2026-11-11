@@ -3,13 +3,16 @@
 How auto loans move between payment statuses over time, and how likely an open loan is to be
 repossessed within the next 12 months.
 
-This is an independent portfolio project. It runs entirely on synthetic data from a simulator
-included in this repository. It is not a system built for or used by any employer, it does not
-reproduce any company's models or servicing rules, and it has not been validated on real loans.
+## Data Privacy and Project Disclaimer
 
-> **Read this first.** Every number below comes from simulated loans with simulated servicing rules.
-> The results show that the methods are implemented and tested correctly. They say nothing about
-> real repossession rates or real model performance. This is not a servicing or collections tool.
+All datasets used in this independent portfolio project are 100% synthetic. I generated them
+with the simulator included in this repository to demonstrate automotive finance analytics and
+machine learning methods. Privacy and confidentiality requirements prevent publication of actual
+customer loan records, payment histories, and repossession information. This project contains
+no confidential employer data, actual customer information, or anonymized copies of private datasets.
+
+All published performance metrics come from synthetic data. They do not establish performance on
+real borrowers. The models were neither validated nor deployed as real-world lending decision systems.
 
 ## 1. Business problem
 
@@ -57,7 +60,7 @@ What matters for this project:
   groups (A is fastest, C is slowest), and on a monthly capacity factor. About 8% of vehicles are
   never found. Borrowers can also surrender the vehicle.
 - There is a **four-month servicing pause** in 2020 when almost nothing is assigned for repossession.
-- Accounts 150+ days past due that are not repossessed are charged off.
+- Accounts 150+ days past due that remain eligible face a monthly probability of charge-off.
 - 57% of loans are still open at the data cutoff, so censoring is everywhere.
 
 ## 3. Methods
@@ -158,7 +161,13 @@ flowchart LR
 - **Search budget.** 4 random configurations for the XGBoost hazard and 6 for the direct classifier.
   The full pipeline runs in about 2.5 minutes on my machine.
 
-## 7. Results
+## 7. Results on Synthetic Data
+
+ROC-AUC measures how well scores rank events above non-events. The tables report average precision
+as PR-AUC. The Brier score is the mean squared error of predicted probabilities against observed
+binary outcomes, with lower values indicating better performance.
+
+All transition, portfolio, and model results below use synthetic loans and simulated servicing rules.
 
 Full reports: [`reports/portfolio_report.md`](reports/portfolio_report.md) and
 [`reports/model_evaluation.md`](reports/model_evaluation.md).
@@ -178,7 +187,7 @@ Full reports: [`reports/portfolio_report.md`](reports/portfolio_report.md) and
 I took the 19,893 loans open at the end of June 2023, estimated the matrix from earlier months only,
 and projected 12 months ahead.
 
-| After 12 months | Actual | Markov | Error |
+| After 12 months | Observed in simulation | Markov | Error |
 |---|---:|---:|---:|
 | Current | 66.75% | 72.38% | +5.64 pts |
 | 30+ DPD (three buckets) | 6.03% | 6.38% | +0.35 pts |
@@ -220,8 +229,7 @@ better than the Markov chain. Between them, the intervals overlap almost complet
 **Every model predicts too few repossessions for 2023.** This is the most important result. The
 models were fitted on 2019-2022, which includes the servicing pause and lower delinquency. In 2023-24
 delinquency ran higher. The shortfall is biggest for accounts that were current at the landmark
-(1.86% observed against about 1.3-1.4% predicted). An out-of-time test shows this. A random split would
-have hidden it. The practical answer is regular recalibration and monitoring.
+(1.86% observed against about 1.3-1.4% predicted). The synthetic out-of-time test exposes this calibration drift.
 
 **The logistic hazard has a specific weak spot.** For accounts 1-29 days past due it predicts 3.4%
 against 7.6% observed. The tree models predict about 5.7%. A linear model has trouble with the jump
@@ -231,7 +239,7 @@ in risk between "current" and "a little behind".
 the XGBoost hazard, because short-term repossession is almost all about who is already deeply
 delinquent. PR-AUC still separates them (0.334 against 0.534).
 
-**Hazard model or direct classifier?** Same accuracy at 12 months. The direct classifier had to
+**Hazard model or direct classifier?** The 12-month ROC-AUC, average precision, and Brier scores are similar on the synthetic test set. The direct classifier had to
 drop 50,224 of 125,674 training landmarks because their 12-month labels were not complete yet. The
 hazard models used all of them, and one hazard model gives every horizon from 1 to 12 months plus
 payoff and charge-off probabilities. The direct classifier is much simpler and fits in under a second.
